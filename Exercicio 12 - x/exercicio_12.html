@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Resolução do exercicio 12</title>
+    </head>
+    <body>
+        <!-- alinea a) -->
+        <button type="button" autofocus onclick="console.log('Welcome ')">Clique Aqui!</button>
+
+        <!-- alinea b) -->
+        <br><br>
+        <form action="exemplo.php" method="post">   
+            Nome : <input type="text" name="fnome"><br>  
+            <button type="button" name="Submit" disabled>Gravar</button>
+        </form>
+
+        <!-- alinea c) -->
+        <br><br>
+        <form action="gravar.php" method="post">
+            Nome: <input type="text" name="fnome"><br>
+            Categoria: <input type="text" name="fnome"><br>
+            <button type="submit">Gravar</button><br>
+            <button type="submit" formaction="gravarAdmin.php">Gravar como admin</button>
+        </form>
+
+        <!-- alinea d) -->
+        <br><br>
+        <form action="http://www.google.com" method="post">
+            E-mail: <input type="text" name="email"><br>
+            <button type="submit">Enviar</button><br>
+            <button type="submit" formnovalidate>Enviar sem validação</button>
+        </form>
+
+        <!-- alinea e) -->
+        <br><br>
+        <form action="http://www.google.com" method="POST">
+            Nome: <input type="text" name="fnome"><br>
+            Categoria: <input type="text" name="fnome"><br>
+            <button type="submit">Enviar</button>
+            <button type="submit" formtarget="_blank">Enviar para nova janela</button>
+        </form>
+
+
+    </body>
+</html>
+
+
+
+

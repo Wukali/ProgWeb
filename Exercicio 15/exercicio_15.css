@@ -7,9 +7,8 @@ body {
 
 /* Estilos do cabeçalho */
 header {
-  background-color: #f2f2f2;
   padding: 10px;
-  text-align: center;
+  text-align: right;
 }
 
 img {
@@ -30,6 +29,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 16px;
 }
 
 input[type="text"] {
@@ -39,8 +40,14 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 16px;
 }
+header input[type="submit"] {
+  border: 0px ;
+  background-color: #f2f2f2;
+  cursor: pointer;
 
-input[type="submit"] {
+}
+
+.botoes input[type="submit"] {
   margin-left: 10px;
   padding: 10px 20px;
   background-color: #f2f2f2;
@@ -61,6 +68,13 @@ footer {
 .search-container {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.botoes {
+  display: flex;
+  gap: 16px;
 }
 
 .search-container img {

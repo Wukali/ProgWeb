@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estrela</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="criarEstrela()">Criar Estrela</button>
+  <canvas id="canvas" width="200" height="200"></canvas>
+
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var cores = ['red', 'white', 'blue'];
+    var indiceCor = 0;
+
+    function criarEstrela() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      var pontos = [
+        { x: 100, y: 10 },
+        { x: 140, y: 198 },
+        { x: 10, y: 78 },
+        { x: 190, y: 78 },
+        { x: 60, y: 198 }
+      ];
+
+      ctx.beginPath();
+      ctx.moveTo(pontos[0].x, pontos[0].y);
+      for (var i = 1; i < pontos.length; i++) {
+        ctx.lineTo(pontos[i].x, pontos[i].y);
+      }
+      ctx.closePath();
+
+      ctx.fillStyle = cores[indiceCor];
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'black';
+      ctx.stroke();
+
+      indiceCor = (indiceCor + 1) % cores.length;
+    }
+  </script>
+</body>
+</html>

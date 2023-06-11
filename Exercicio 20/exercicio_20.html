@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estrelas</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="criarEstrela()">Criar Estrela</button>
+  <canvas id="canvas" width="400" height="400"></canvas>
+
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var cores = ['yellow', 'blue', 'green', 'red', 'orange'];
+    var estrelas = [];
+
+    function criarEstrela() {
+      var tamanho = Math.random() * 50 + 10; // Tamanho aleatório entre 10 e 60
+      var x = Math.random() * (canvas.width - tamanho); // Posição x aleatória dentro do canvas
+      var y = Math.random() * (canvas.height - tamanho); // Posição y aleatória dentro do canvas
+      var angulo = Math.random() * 360; // Rotação aleatória em graus
+
+      var estrela = {
+        tamanho: tamanho,
+        x: x,
+        y: y,
+        angulo: angulo,
+        cor: cores[Math.floor(Math.random() * cores.length)]
+      };
+
+      estrelas.push(estrela);
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (var i = 0; i < estrelas.length; i++) {
+        var estrelaAtual = estrelas[i];
+
+        ctx.save();
+        ctx.translate(estrelaAtual.x, estrelaAtual.y);
+        ctx.rotate((estrelaAtual.angulo * Math.PI) / 180);
+
+        ctx.beginPath();
+        ctx.moveTo(0, -estrelaAtual.tamanho / 2);
+        ctx.lineTo(0.15 * estrelaAtual.tamanho, -0.15 * estrelaAtual.tamanho);
+        ctx.lineTo(estrelaAtual.tamanho / 2, -0.15 * estrelaAtual.tamanho);
+        ctx.lineTo(0.25 * estrelaAtual.tamanho, 0.15 * estrelaAtual.tamanho);
+        ctx.lineTo(0.4 * estrelaAtual.tamanho, 0.5 * estrelaAtual.tamanho);
+        ctx.lineTo(0, 0.25 * estrelaAtual.tamanho);
+        ctx.lineTo(-0.4 * estrelaAtual.tamanho, 0.5 * estrelaAtual.tamanho);
+        ctx.lineTo(-0.25 * estrelaAtual.tamanho, 0.15 * estrelaAtual.tamanho);
+        ctx.lineTo(-estrelaAtual.tamanho / 2, -0.15 * estrelaAtual.tamanho);
+        ctx.lineTo(-0.15 * estrelaAtual.tamanho, -0.15 * estrelaAtual.tamanho);
+        ctx.closePath();
+
+        ctx.fillStyle = estrelaAtual.cor;
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Estilos para o céu e as estrelas */
+body {
+  background-color: black;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 1s infinite;
+}
+
+/* Estilos para o sol */
+#sun {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(yellow, orange); /* Gradiente de cores */
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.8); /* Sombra alaranjada */
+  animation: sun-rays 5s infinite linear;
+}
+
+/* Estilos para a terra */
+#earth-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  animation: earth-system-rotation 20s infinite linear;
+}
+
+#earth {
+  position: absolute;
+  top: 25px; /* Alteração: Ajustar a posição da Terra */
+  left: 140px; /* Alteração: Ajustar a posição da Terra */
+  width: 100px; /* Alteração: Ajustar o tamanho da Terra */
+  height: 100px; /* Alteração: Ajustar o tamanho da Terra */
+  background-image: url('terra.png'); /* Substitua 'terra.png' pelo caminho correto para a imagem da bola do planeta Terra */
+  background-size: cover;
+  border-radius: 50%;
+  animation: earth-rotation 10s infinite linear;
+}
+
+/* Estilos para a lua */
+#moon {
+  position: absolute;
+  top: 50%;
+  left: 140px;
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 50%;
+  animation: moon-orbit 2s infinite linear;
+}
+
+/* Animação das estrelas */
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Animação dos raios solares */
+@keyframes sun-rays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animação da rotação da terra */
+@keyframes earth-rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animação da rotação do sistema Terra-Lua */
+@keyframes earth-system-rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animação da órbita da lua */
+@keyframes moon-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

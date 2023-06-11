@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smile</title>
+  <style>
+    #canvas {
+      width: 700px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    // Função para desenhar o smile
+    function drawSmile() {
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Desenhar a cara (círculo)
+      var faceRadius = Math.min(canvas.width, canvas.height) / 3;
+      var faceX = canvas.width / 2;
+      var faceY = canvas.height / 2;
+
+      context.beginPath();
+      context.arc(faceX, faceY, faceRadius, 0, 2 * Math.PI);
+      context.fillStyle = "white";
+      context.fill();
+      context.lineWidth = 2;
+      context.strokeStyle = "black";
+      context.stroke();
+
+      // Desenhar os olhos (círculos castanhos)
+      var eyeRadius = faceRadius / 8;
+      var eyeXOffset = faceRadius / 2.5;
+      var eyeYOffset = faceRadius / 2.5;
+
+      context.beginPath();
+      context.arc(faceX - eyeXOffset, faceY - eyeYOffset, eyeRadius, 0, 2 * Math.PI);
+      context.fillStyle = "brown";
+      context.fill();
+      context.stroke();
+
+      context.beginPath();
+      context.arc(faceX + eyeXOffset, faceY - eyeYOffset, eyeRadius, 0, 2 * Math.PI);
+      context.fillStyle = "brown";
+      context.fill();
+      context.stroke();
+
+      // Desenhar o sorriso (arco vermelho)
+      var smileRadius = faceRadius / 2.5;
+      var smileStartAngle = Math.PI / 6;
+      var smileEndAngle = (Math.PI * 5) / 6;
+
+      context.beginPath();
+      context.arc(faceX, faceY, smileRadius, smileStartAngle, smileEndAngle);
+      context.lineWidth = 5;
+      context.strokeStyle = "red";
+      context.stroke();
+    }
+
+    window.onload = function() {
+      drawSmile();
+    };
+  </script>
+</body>
+</html>

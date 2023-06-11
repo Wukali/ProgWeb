@@ -1,0 +1,61 @@
+/* style.css */
+
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Estilos do cabeçalho do site */
+.site-header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+
+}
+
+.site-header h1 {
+  color: blue;
+}
+
+
+
+/* Estilos dos cabeçalhos dos artigos */
+.post-header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.post-header h2 {
+  color: #333;
+}
+
+.post-header p {
+  color: #666;
+}
+
+
+/* Estilos do conteúdo principal */
+main {
+  margin: 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}

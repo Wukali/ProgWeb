@@ -1,0 +1,91 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #f2f2f2;
+      padding: 10px;
+      text-align: right;
+}
+
+img {
+  height: 50px;
+  padding: 10px;
+}
+
+/* Estilos do conteúdo principal */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Estilos do formulário de pesquisa */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+header input[type="submit"] {
+  
+    background-color: #f2f2f2;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+
+}
+
+.botoes input[type="submit"] {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilos do formulário de pesquisa */
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.botoes {
+  display: flex;
+  gap: 16px;
+}
+
+.search-container img {
+  margin-right: 10px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 22 -  Distribuição de Bónus</title>
+        <link rel="stylesheet" tyle="text/css" href="styles.css">
+
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>Cálculo de Bónus</h1>
+            <div id="calculadora">
+                <form>
+                    <label>Qual é a totalidade da faturação?<br>
+                        <input type="text" id="totalFaturacao">€
+                    </label>
+
+                    <br><br>
+                    <label>Qual é a percentagem?<br>
+                        <select id="desempenho">
+                            <option disabled selected value="0">-- Escolha uma Opção --</option>
+                            <option value="0.30">30% Extraordinário</option>
+                            <option value="0.20">20% Bom</option>
+                            <option value="0.15">15% Não foi mau</option>
+                            <option value="0.1">10% Mau</option>
+                            <option value="0.05">5% Terrivel</option>
+                            </select>
+                    </label>
+                    <br><br>
+                    <label> 
+                        Por quantos funcionários distribui o bónus? <br>
+                        <input type="text" id="totalFuncionarios">
+                        Funcionários.
+
+                    </label> 
+                    <br><br>
+                    <button type="button" id="btnCalcular">
+                        CALCULAR!
+                    </button>
+                </form>
+
+            </div><!--FIm da Calculadora-->
+
+            <div id="totalBonus">
+                <span id="bonus">0.00</span><sup>€</sup>
+                <small>cada.</small>
+            </div>
+        </div> 
+
+
+
+    <script type="text/javascript" src="script.js" ></script>
+    </body>
+
+
+
+
+</html>

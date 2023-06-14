@@ -1,69 +1,76 @@
-$(document).ready(function() {
-    var car1Position = 0;
-    var car2Position = 0;
-    var car1Time = 0;
-    var car2Time = 0;
-    var raceInProgress = false;
-  
-    function moveCars() {
-      if (car1Position < 700 && car2Position < 700) {
-        car1Position += Math.floor(Math.random() * 5) + 1;
-        car2Position += Math.floor(Math.random() * 5) + 1;
-  
-        $('#car1').css('left', car1Position + 'px');
-        $('#car2').css('left', car2Position + 'px');
-  
-        requestAnimationFrame(moveCars);
-      } else {
-        raceInProgress = false;
-        $('#race-btn').prop('disabled', false);
-  
-        if (car1Position >= 700 && car2Position >= 700) {
-          $('#car1-position').text('Carro 1: 1º Lugar');
-          $('#car2-position').text('Carro 2: 2º Lugar');
-        } else if (car1Position >= 700) {
-          $('#car1-position').text('Carro 1: 1º Lugar');
-          $('#car2-position').text('Carro 2: 2º Lugar');
-        } else if (car2Position >= 700) {
-          $('#car1-position').text('Carro 1: 2º Lugar');
-          $('#car2-position').text('Carro 2: 1º Lugar');
+var car = document.getElementById("car");
+    var bike = document.getElementById("bike");
+    var startButton = document.getElementById("start-button");
+    var resetButton = document.getElementById("reset-button");
+    var winnerMessage = document.getElementById("winner-message");
+    var raceStarted = false;
+    var carTime = 0;
+    var bikeTime = 0;
+
+    startButton.addEventListener("click", function() {
+      if (!raceStarted) {
+        raceStarted = true;
+        startRace();
+      }
+    });
+
+    resetButton.addEventListener("click", function() {
+      resetRace();
+    });
+
+    function startRace() {
+      var raceContainerWidth = document.querySelector(".race-container").clientWidth;
+      var raceTrackWidth = raceContainerWidth - car.clientWidth;
+      var carPosition = 0;
+      var bikePosition = 0;
+
+      var raceInterval = setInterval(function() {
+        carPosition += getRandomSpeed();
+        bikePosition += getRandomSpeed();
+
+        car.style.left = (carPosition / 100) * raceTrackWidth + "px";
+        bike.style.left = (bikePosition / 100) * raceTrackWidth + "px";
+
+        if (carPosition >= 100 || bikePosition >= 100) {
+          endRace(raceInterval);
+          determineWinner(carPosition, bikePosition);
         }
-  
-        $('#car1-time').text('Tempo: ' + car1Time + 's');
-        $('#car2-time').text('Tempo: ' + car2Time + 's');
-      }
+      }, 100);
     }
-  
-    $('#start-btn').click(function() {
-      car1Position = 0;
-      car2Position = 0;
-      car1Time = 0;
-      car2Time = 0;
-      raceInProgress = false;
-      $('#car1').css('left', '0');
-      $('#car2').css('left', '0');
-      $('#car1-position').text('');
-      $('#car2-position').text('');
-      $('#car1-time').text('');
-      $('#car2-time').text('');
-      $('#race-btn').prop('disabled', false);
-    });
-  
-    $('#race-btn').click(function() {
-      if (!raceInProgress) {
-        raceInProgress = true;
-        $('#race-btn').prop('disabled', true);
-        requestAnimationFrame(moveCars);
-        raceTimer();
-      }
-    });
-  
-    function raceTimer() {
-      if (raceInProgress) {
-        car1Time++;
-        car2Time++;
-        setTimeout(raceTimer, 1000);
-      }
+
+    function resetRace() {
+      car.style.left = "0";
+      bike.style.left = "0";
+      winnerMessage.textContent = "";
+      raceStarted = false;
+      carTime = 0;
+      bikeTime = 0;
     }
-  });
-  
+
+    function endRace(interval) {
+      clearInterval(interval);
+      raceStarted = false;
+    }
+
+    function determineWinner(carPosition, bikePosition) {
+      var carTimeSeconds = carPosition / 10;
+      var bikeTimeSeconds = bikePosition / 10;
+
+      carTime = carTimeSeconds.toFixed(2);
+      bikeTime = bikeTimeSeconds.toFixed(2);
+
+      var winnerText = "";
+      if (carPosition > bikePosition) {
+        winnerText = "Car wins!";
+      } else if (bikePosition > carPosition) {
+        winnerText = "Bike wins!";
+      } else {
+        winnerText = "It's a tie!";
+      }
+
+      winnerMessage.textContent = `Winner: ${winnerText} | Times - Car: ${carTime}s, Bike: ${bikeTime}s`;
+    }
+
+    function getRandomSpeed() {
+      return Math.floor(Math.random() * 10) + 5;
+    }

@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Corrida de Carros</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Drag Racing Game</title>
+  <link rel="stylesheet" tyle="text/css" href="exercicio_23.css">
 </head>
 <body>
-  <h1>Corrida de Carros</h1>
-  <img src="estrada.jpg" alt="Estrada" class="road">
-  <div id="car1" class="car"><img src="carro.jpg" alt="Carro 1"></div>
-  <div id="car2" class="car"><img src="carro2.jpg" alt="Carro 2"></div>
-  <div id="start-line"></div>
-  <div id="finish-line"></div>
-
-  <div id="controls">
-    <button id="start-btn">INÍCIO</button>
-    <button id="race-btn">PARTIDA</button>
+  <div class="container">
+    <button id="start-button" class="button">Start</button>
+    <button id="reset-button" class="button reset-button">Reset</button>
   </div>
 
-  <div id="results">
-    <h2>Resultados</h2>
-    <p id="car1-position"></p>
-    <p id="car2-position"></p>
-    <p id="car1-time"></p>
-    <p id="car2-time"></p>
+  <div class="race-container">
+    <div class="road">
+      <div class="stripe"></div>
+      <div class="lane" style="top: 0;">
+        <div id="car" class="car"></div>
+      </div>
+      <div class="lane" style="bottom: 0;">
+        <div id="bike" class="bike"></div>
+      </div>
+    </div>
+
+    
+
+    <p id="winner-message"></p>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <script type="text/javascript" src="exercicio_23.js" ></script>
 </body>
 </html>

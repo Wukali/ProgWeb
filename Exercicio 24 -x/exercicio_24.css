@@ -1,0 +1,49 @@
+header h1 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.agenda {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .agenda th {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .agenda td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  #delete-zone {
+    width: 400px;
+    height: 200px;
+    background-color: red;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+  
+  .tarefa {
+    cursor: move;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+  }
+  
+  .tarefa-placeholder {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border: 1px dashed #aaa;
+  }
+  

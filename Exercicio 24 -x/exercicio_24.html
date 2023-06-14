@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agenda de Tarefas</title>
+  <link rel="stylesheet" type="text/css" href="exercicio_24.css">
+</head>
+<body>
+  <header>
+    <h1>Lista de Tarefas</h1>
+  </header>
+  <table class="agenda">
+    <thead>
+      <tr>
+        <th>Segunda-feira</th>
+        <th>Terça-feira</th>
+        <th>Quarta-feira</th>
+        <th>Quinta-feira</th>
+        <th>Sexta-feira</th>
+        <th>Sábado</th>
+        <th>Domingo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tarefas-dia" data-dia-semana="0"></td>
+        <td class="tarefas-dia" data-dia-semana="1"></td>
+        <td class="tarefas-dia" data-dia-semana="2"></td>
+        <td class="tarefas-dia" data-dia-semana="3"></td>
+        <td class="tarefas-dia" data-dia-semana="4"></td>
+        <td class="tarefas-dia" data-dia-semana="5"></td>
+        <td class="tarefas-dia" data-dia-semana="6"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="delete-zone">Arraste as tarefas para excluir</div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script src="exercicio_24.js"></script>
+</body>
+</html>

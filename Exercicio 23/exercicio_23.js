@@ -68,7 +68,11 @@ var car = document.getElementById("car");
         winnerText = "It's a tie!";
       }
 
-      winnerMessage.textContent = `Winner: ${winnerText} | Times - Car: ${carTime}s, Bike: ${bikeTime}s`;
+      winnerMessage.innerHTML = `
+        <p>Winner: ${winnerText}</p>
+        <p>Times - Car: ${carTime}s, Bike: ${bikeTime}s</p>
+`;
+
     }
 
     function getRandomSpeed() {
